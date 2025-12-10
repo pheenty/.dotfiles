@@ -1,0 +1,39 @@
+@import url('colors.css');
+
+* {
+    font-family: 'CaskaydiaMono Nerd Font';
+    font-size: 14px;
+    color: @fg;
+}
+
+#custom-launcher {
+  font-size: 24px;
+}
+
+#waybar {
+    background: @bg_alpha;
+}
+
+#waybar > box {
+    background: @bg;
+    border-radius: 6px;
+    padding: 6px;
+    min-height: 40px;
+}
+
+tooltip {
+    background: @bg;
+}
+
+#custom-launcher,
+#cpu,
+#memory,
+#language,
+#wireplumber,
+#battery {
+    min-width: 65px;
+    min-height: 28px;
+    border-radius: 6px;
+    background: @bg_highlight;
+}
+

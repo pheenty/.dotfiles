@@ -1,0 +1,1 @@
+../../../../lazyvim_starter/lua/config/lazy.lua

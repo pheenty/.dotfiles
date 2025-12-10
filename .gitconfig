@@ -1,0 +1,15 @@
+[init]
+	defaultBranch = master
+[user]
+	email = fedorlukin2006@gmail.com
+	name = Ted Lukin
+	signingkey = CF12176A51E94BA2 # or whatever fingerprint
+[url "git@github.com:"]
+	insteadOf = gh:
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = false
+	ff = true

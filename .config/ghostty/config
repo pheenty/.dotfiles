@@ -1,0 +1,27 @@
+font-family = "CaskaydiaMono Nerd Font Mono"
+font-size = 13
+
+working-directory = home
+background-opacity-cells = true
+# change to 0.65 if blur starts working
+background-opacity = 0.85
+# change to 0.85 if blur stops working
+# background-blur = true
+# niri doesn't support blur yet
+cursor-style = block_hollow
+custom-shader = cursor_smear.glsl
+window-padding-x = 8
+window-padding-y = 7
+cursor-style-blink = true
+
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+
+# yes it should be this way
+keybind = PageUp=scroll_page_fractional:-0.5
+keybind = PageDown=scroll_page_fractional:0.5
+
+confirm-close-surface = false
+app-notifications = false
+
+theme = cyberdream

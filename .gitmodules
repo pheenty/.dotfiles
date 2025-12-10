@@ -1,0 +1,27 @@
+[submodule "cyberdream"]
+	path = cyberdream
+	url = https://github.com/scottmckendry/cyberdream.nvim.git
+[submodule ".config/tmux/plugins/catpuccin"]
+	path = .config/tmux/plugins/catpuccin
+	url = https://github.com/catppuccin/tmux.git
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".config/tmux/plugins/tmux-cpu"]
+	path = .config/tmux/plugins/tmux-cpu
+	url = https://github.com/tmux-plugins/tmux-cpu
+[submodule ".zsh/oh-my-zsh"]
+	path = .zsh/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".zsh/custom/plugins/zsh-autosuggestions"]
+	path = .zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = .zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".zsh/powerlevel10k"]
+	path = .zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "lazyvim_starter"]
+	path = lazyvim_starter
+	url = https://github.com/LazyVim/starter

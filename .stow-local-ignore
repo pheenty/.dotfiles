@@ -1,0 +1,9 @@
+\.git
+\.gitignore
+\.gitmodules
+configuration.nix
+README.md
+LICENCE
+cyberdream
+lazyvim_starter
+sshd_config
