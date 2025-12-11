@@ -72,13 +72,13 @@ in
     ] ++ (if graphics then [
       ghostty
       niri
-      waybar
-      xkb-switch
+      #nwg-look
+      themechanger
+      #kdePackages.qt6ct
       fuzzel
       swaynotificationcenter
       copyq
-      pcmanfm-qt
-      kdePackages.qt6ct
+      thunar
       flameshot
       firefox
       vlc

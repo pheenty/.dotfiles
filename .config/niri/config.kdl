@@ -13,6 +13,10 @@ input {
         // numlock
     }
 
+    mouse {
+      accel-speed -0.5
+    }
+
     touchpad {
         off
     }
@@ -45,19 +49,18 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         proportion 0.3333333
-        proportion 0.25
         proportion 0.5
+        proportion 1.0
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
     preset-window-heights {
         proportion 0.5
-        proportion 0.3333333
         proportion 1.0
     }
 
@@ -84,10 +87,10 @@ layout {
     }
 }
 
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "copyq"
 spawn-at-startup "swaync" // TODO configure
-spawn-sh-at-startup "mpvpaper -o 'loop-file' ALL ~/Videos/hyperspeed_compressed.mp4"
+spawn-sh-at-startup "mpvpaper -o 'loop-file --demuxer-max-bytes=10M' ALL ~/Videos/hyperspeed_compressed.mp4"
                  // "swaybg -i ~/Pictures/hyperspeed.png"
 
 hotkey-overlay {
@@ -137,14 +140,12 @@ binds {
     Ctrl+Alt+S hotkey-overlay-title="Open Steam" { spawn "steam"; }
     Ctrl+Alt+F hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
     Ctrl+Alt+Z hotkey-overlay-title="Open Zed" { spawn "zeditor"; }
-    Mod+E hotkey-overlay-title="Open file manager" { spawn "pcmanfm"; }
+    Mod+E hotkey-overlay-title="Open file manager" { spawn "thunar"; }
     Mod+V hotkey-overlay-title="Open clipboard" { spawn-sh "copyq toggle"; }
-    Mod+F2 hotkey-overlay-title="Open app launcher" { spawn "fuzzel"; }
-    Mod+L hotkey-overlay-title="Lock the screen with swaylock" { spawn "swaylock"; }
+    Mod+F2 hotkey-overlay-title="Open app launcher" { spawn "anyrun"; }
+    Mod+L hotkey-overlay-title="Lock the screen" { spawn "swaylock"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
-    // You can also move the mouse into the top-left hot corner,
-    // or do a four-finger swipe up on a touchpad.
     Mod+F repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
@@ -152,7 +153,8 @@ binds {
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
-    Mod+Page_Up { maximize-column; }
+    Mod+Page_Up { fullscreen-window; }
+    // Mod+Page_Down { minimize-window;}
 
     Mod+W { focus-window-or-workspace-up; }
     Mod+A { focus-column-left; }
@@ -195,6 +197,10 @@ binds {
     // rather than stacked on top of each other.
     Mod+F3 { toggle-column-tabbed-display; }
 
+    // Expand the focused column to space not taken up by other fully visible columns.
+    // Makes the column "fill the rest of the space".
+    Mod+Page_Down { expand-column-to-available-width; }
+
     // Note: if you uncomment these, make sure you do NOT have
     // a matching layout switch hotkey configured in xkb options above.
     // Having both at once on the same hotkey will break the switching,
@@ -202,8 +208,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
 
     // Print { screenshot; }
-    Print { spawn-sh "flameshot gui -c"; }
-    Mod+Shift+S { spawn-sh "flameshot gui -c"; }
+    Print { spawn-sh "flameshot gui -r | wl-copy";  }
+    Mod+Shift+S { spawn-sh "flameshot gui -r -s | wl-copy"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -237,6 +243,15 @@ binds {
 }
 
 environment {
+
     QT_QPA_PLATFORMTHEME "qt6ct"
     // TODO GTK theme
+}
+
+recent-windows {
+  off
+}
+
+cursor {
+    xcursor-theme "Sweet-cursors"
 }

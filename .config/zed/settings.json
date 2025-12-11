@@ -54,7 +54,7 @@
   "theme": "Cyberdream dark",
   "experimental.theme_overrides": {
     "background.appearance": "transparent",
-    "background": "#16181a4c",
+    "background": "#16181ab2",
     "editor.background": "#0000007f",
     "editor.active_line.background": "#0000004c",
     "editor.gutter.background": "#0000007f",

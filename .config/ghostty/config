@@ -1,7 +1,8 @@
 font-family = "CaskaydiaMono Nerd Font Mono"
 font-size = 13
 
-working-directory = home
+working-directory = inherit
+window-inherit-working-directory = false
 background-opacity-cells = true
 # change to 0.65 if blur starts working
 background-opacity = 0.85
