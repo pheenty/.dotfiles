@@ -2,7 +2,7 @@ input {
     keyboard {
         xkb {
             layout "us,ru"
-            options "grp:caps_toggle"
+            options "shift:both_capslock_cancel, grp:caps_toggle"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -90,7 +90,7 @@ layout {
 // spawn-at-startup "waybar"
 spawn-at-startup "copyq"
 spawn-at-startup "swaync" // TODO configure
-spawn-sh-at-startup "mpvpaper -o 'loop-file --demuxer-max-bytes=10M' ALL ~/Videos/hyperspeed_compressed.mp4"
+spawn-sh-at-startup "gslapper -o 'loop-file --demuxer-max-bytes=10M' ALL ~/Videos/hyperspeed_compressed.mp4"
                  // "swaybg -i ~/Pictures/hyperspeed.png"
 
 hotkey-overlay {
@@ -142,7 +142,7 @@ binds {
     Ctrl+Alt+Z hotkey-overlay-title="Open Zed" { spawn "zeditor"; }
     Mod+E hotkey-overlay-title="Open file manager" { spawn "thunar"; }
     Mod+V hotkey-overlay-title="Open clipboard" { spawn-sh "copyq toggle"; }
-    Mod+F2 hotkey-overlay-title="Open app launcher" { spawn "anyrun"; }
+    Mod+F2 hotkey-overlay-title="Open app launcher" { spawn "wldash"; }
     Mod+L hotkey-overlay-title="Lock the screen" { spawn "swaylock"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
@@ -243,10 +243,9 @@ binds {
 }
 
 environment {
-
     QT_QPA_PLATFORMTHEME "qt6ct"
-    // TODO GTK theme
-}
+    _JAVA_AWT_WM_NONREPARENTING "1"
+  }
 
 recent-windows {
   off
