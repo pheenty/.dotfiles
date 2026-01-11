@@ -32,11 +32,11 @@ gestures {
     }
 }
 
-output "eDP-1" {
-    mode "1920x1080@60"
-    scale 1
-    transform "normal"
-    // position x=1280 y=0
+output "HDMI-A-1" {
+   mode "1920x1080@74.973"
+   scale 1
+   transform "normal"
+   position x=0 y=0
 }
 
 layout {
@@ -226,6 +226,9 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+P { power-off-monitors; }
+
+    // 
+    Mod+I { spawn-sh "notify-send \"Active window title\" \"$(niri msg --json focused-window | jq -r .title)\""; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.

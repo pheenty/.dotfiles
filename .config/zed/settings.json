@@ -23,9 +23,6 @@
     "show_onboarding_banner": false,
     "show_branch_icon": true
   },
-  "debugger": {
-    "dock": "right"
-  },
   "outline_panel": {
     "dock": "right"
   },
