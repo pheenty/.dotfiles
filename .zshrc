@@ -16,6 +16,11 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+# lacy
+if command -v lacy >/dev/null 2>&1; then
+  eval "$(lacy init zsh --cd-cmd='builtin cd' --cmd=cd --custom-fuzzy=fzf)"
+fi
+
 # aliases
 if command -v eza >/dev/null 2>&1; then
   alias ls='eza --icons'
