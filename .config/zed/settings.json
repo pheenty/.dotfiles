@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "git_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "notification_panel": {
+    "button": false
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -24,10 +33,7 @@
     "show_branch_icon": true
   },
   "outline_panel": {
-    "dock": "right"
-  },
-  "notification_panel": {
-    "dock": "left"
+    "button": false,
   },
   "seed_search_query_from_cursor": "selection",
   "search": {
@@ -36,10 +42,7 @@
   "icon_theme": "Catppuccin Latte",
   "format_on_save": "off",
   "use_on_type_format": true,
-  "disable_ai": false,
-  "edit_predictions": {
-    "mode": "subtle"
-  },
+  "disable_ai": true,
   "ui_font_family": "CaskaydiaMono Nerd Font",
   "buffer_line_height": "comfortable",
   "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
