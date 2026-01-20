@@ -88,7 +88,7 @@ layout {
 }
 
 // spawn-at-startup "waybar"
-spawn-at-startup "copyq"
+spawn-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "swaync" // TODO configure
 spawn-sh-at-startup "gslapper -o 'loop-file --demuxer-max-bytes=10M' ALL ~/Videos/hyperspeed_compressed.mp4"
                  // "swaybg -i ~/Pictures/hyperspeed.png"
@@ -116,12 +116,17 @@ window-rule {
     open-floating true
 }
 
+// window-rule {
+//     match app-id=r#"copyq$"#
+//     open-floating true
+//     default-floating-position x=0 y=300 relative-to="bottom"
+//     default-column-width { fixed 400; }
+//     default-window-height { fixed 600; }
+// }
+
 window-rule {
-    match app-id=r#"copyq$"#
-    open-floating true
-    default-floating-position x=0 y=300 relative-to="bottom"
-    default-column-width { fixed 400; }
-    default-window-height { fixed 600; }
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
 window-rule {
@@ -141,7 +146,7 @@ binds {
     Ctrl+Alt+F hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
     Ctrl+Alt+Z hotkey-overlay-title="Open Zed" { spawn "zeditor"; }
     Mod+E hotkey-overlay-title="Open file manager" { spawn "thunar"; }
-    Mod+V hotkey-overlay-title="Open clipboard" { spawn-sh "copyq toggle"; }
+    Mod+V hotkey-overlay-title="Open clipboard" { spawn-sh "nwg-clipman"; }
     Mod+F2 hotkey-overlay-title="Open app launcher" { spawn "wldash"; }
     Mod+L hotkey-overlay-title="Lock the screen" { spawn "swaylock"; }
 

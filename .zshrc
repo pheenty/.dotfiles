@@ -16,12 +16,15 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-# lacy
+
+# aliases and alike
 if command -v lacy >/dev/null 2>&1; then
-  eval "$(lacy init zsh --cd-cmd='builtin cd' --cmd=cd --custom-fuzzy=fzf)"
+  if command -v fzf >/dev/null 2>&1; then
+    FZF='--custom-fuzzy=fzf'
+  fi
+  eval "$(lacy init zsh --cd-cmd='builtin cd' --cmd=cd $FZF)"
 fi
 
-# aliases
 if command -v eza >/dev/null 2>&1; then
   alias ls='eza --icons'
   alias la='eza -A --icons'
@@ -34,6 +37,12 @@ fi
 if command -v podman >/dev/null 2>&1 && ! command -v docker >/dev/null 2>&1; then
   alias docker='podman'
   alias docker-compose="podman-compose"
+fi
+
+if command -v bat >/dev/null 2>&1; then
+  alias cat='bat'
+elif command -v batcat >/dev/null 2>&1; then
+  alias cat='batcat'
 fi
 
 if command -v fd >/dev/null 2>&1; then
