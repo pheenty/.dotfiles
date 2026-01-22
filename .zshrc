@@ -22,7 +22,7 @@ if command -v lacy >/dev/null 2>&1; then
   if command -v fzf >/dev/null 2>&1; then
     FZF='--custom-fuzzy=fzf'
   fi
-  eval "$(lacy init zsh --cd-cmd='builtin cd' --cmd=cd $FZF)"
+  eval "$(lacy init zsh --cmd=cd $FZF)"
 fi
 
 if command -v eza >/dev/null 2>&1; then
